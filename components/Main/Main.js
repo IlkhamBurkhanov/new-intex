@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import Tovar_nov from "../Tovar_noviy/Tovar_noviy";
 import Sale_nov from "../Sale_tovar/Sale_tovar";
 import Populyar_nov from "../Populyar_tovar/Populyar_tovar";
+import Basket from "../Basket/Basket";
+import Order from "../Order/order";
 
 function Main() {
   const [mobile, setMobile] = useState(false);
@@ -25,12 +27,13 @@ function Main() {
   return (
     <main>
       <Hero />
-      <Populyar_nov mobile={mobile} />
+      <Order />
+      {/* <Populyar_nov mobile={mobile} />
       <TashkentPools />
       <Tovar_nov mobile={mobile} />
       <BuyAll />
       <AboutUs />
-      <Sale_nov mobile={mobile} />
+      <Sale_nov mobile={mobile} /> */}
       <Consultation />
     </main>
   );

@@ -208,14 +208,16 @@ function Header() {
                 onChange={handleChange}
               />
               <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
-                <Image
-                  priority={true}
-                  className="w-6 h-6"
-                  src={"/Assets/Images/HeaderAndHeroImg/block-img.svg"}
-                  width={24}
-                  height={24}
-                  alt="Blog Img"
-                />
+                <Link href="/basket">
+                  <Image
+                    priority={true}
+                    className="w-6 h-6"
+                    src={"/Assets/Images/HeaderAndHeroImg/block-img.svg"}
+                    width={24}
+                    height={24}
+                    alt="Blog Img"
+                  />
+                </Link>
               </button>
               <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
                 <Image
