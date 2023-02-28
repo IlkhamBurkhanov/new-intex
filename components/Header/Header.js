@@ -200,14 +200,14 @@ function Header() {
             <div className="flex items-center pl-3">
               <input
                 id="input-searching"
-                className="hidden md:inline-block  w-inputWidth py-2.5 rounded-xl pl-9 outline-none"
+                className="hidden md:inline-block  w-[260px] py-2.5 rounded-xl pl-9 outline-none"
                 type="text"
                 autoComplete="off"
                 placeholder={`${languages[lang].header.navCategory.searchInput}`}
                 aria-label="Enter your searching"
                 onChange={handleChange}
               />
-              {/* <button className="bg-white z-50 hidden md:flex ml-8 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
+              <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
                 <Image
                   priority={true}
                   className="w-6 h-6"
@@ -216,7 +216,17 @@ function Header() {
                   height={24}
                   alt="Blog Img"
                 />
-              </button> */}
+              </button>
+              <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
+                <Image
+                  priority={true}
+                  className="w-6 h-6"
+                  src={"/Assets/Images/HeaderAndHeroImg/user.svg"}
+                  width={24}
+                  height={24}
+                  alt="Blog Img"
+                />
+              </button>
 
               <a className="flex sm:hidden z-50" href="tel:+998901288182">
                 <Image
@@ -232,7 +242,7 @@ function Header() {
               <div className="relative ">
                 <div
                   onClick={() => setOpenLang(!openLang)}
-                  className="bg-white relative language-wrap hidden cursor-pointer sm:flex ml-8 w-20  items-center justify-between py-3 z-40 pl-1 pr-2 rounded-md"
+                  className="bg-white relative language-wrap hidden cursor-pointer sm:flex ml-5 w-20  items-center justify-between py-3 z-40 pl-1 pr-2 rounded-md"
                 >
                   <Image
                     priority={true}
