@@ -64,12 +64,14 @@ function Order() {
               <label className="">
                 <h2>Регион</h2>
                 <select className="w-[408px] border h-12 mt-3 rounded-lg px-4">
+                  <option className="text-[#B4B6B8]">Выбирите</option>
                   <option>Uzbekistan</option>
                 </select>
               </label>
               <label>
                 <h2>Город</h2>
                 <select className="w-[408px] border h-12 mt-3 rounded-lg px-4">
+                  <option className="text-[#B4B6B8]">Выбирите</option>
                   <option>Qoqon</option>
                 </select>
               </label>
