@@ -27,13 +27,14 @@ function Main() {
   return (
     <main>
       <Hero />
-      <Order />
-      {/* <Populyar_nov mobile={mobile} />
+      {/* <Order /> */}
+      {/* <Basket /> */}
+      <Populyar_nov mobile={mobile} />
       <TashkentPools />
       <Tovar_nov mobile={mobile} />
       <BuyAll />
       <AboutUs />
-      <Sale_nov mobile={mobile} /> */}
+      <Sale_nov mobile={mobile} />
       <Consultation />
     </main>
   );
