@@ -9,6 +9,7 @@ import Sale_nov from "../Sale_tovar/Sale_tovar";
 import Populyar_nov from "../Populyar_tovar/Populyar_tovar";
 import Basket from "../Basket/Basket";
 import Order from "../Order/order";
+import SimilarProducts from "../Similat_ptoducts/similar";
 
 function Main() {
   const [mobile, setMobile] = useState(false);
@@ -28,7 +29,8 @@ function Main() {
     <main>
       <Hero />
       {/* <Order /> */}
-      {/* <Basket /> */}
+      <Basket />
+
       <Populyar_nov mobile={mobile} />
       <TashkentPools />
       <Tovar_nov mobile={mobile} />
