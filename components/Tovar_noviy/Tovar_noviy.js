@@ -7,7 +7,7 @@ import { BtnLoader, Spinner } from "../Spinner/Spinner";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-hot-toast";
-
+import Heart from "../../public/Assets/Images/ModalImg/heart.svg";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -187,7 +187,7 @@ const Tovar_nov = ({ mobile }) => {
     const fintProduct = tovar.find((e) => e.id === id);
     setFind(fintProduct);
   };
-
+  console.log(tovar);
   return (
     <section
       id="noviy"
@@ -239,14 +239,14 @@ const Tovar_nov = ({ mobile }) => {
                     </span>
                     <Image
                       onDragStart={(e) => e.preventDefault()}
-                      className="mt-2 mb-1 md:mb-4"
-                      src={`${img}${item.image}`}
+                      className="mt-2 mb-1 md:mb-4 w-[280px] h-[220px] cursor"
+                      src={`${img}${item.image[0]}`}
                       alt="baseen_product_image"
                       width={280}
                       height={220}
                     />
                     <div className="p-2 md:p-4 border-t-lineColor border-t-1">
-                      <h3 className="text-sm md:text-lg font-bold leading-5 mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
+                      <h3 className="text-sm md:text-lg font-bold leading-5 mb-2 ">
                         {lang === "ru"
                           ? item.name_ru
                           : lang === "en"
@@ -258,6 +258,7 @@ const Tovar_nov = ({ mobile }) => {
                           item.sub_attributes.length > 0 ? "" : "h-6"
                         } text-xs md:text-base m-0 mb-2 block leading-22 text-black-black_thin`}
                       >
+                        220х150х60см, 1662л
                         {item.sub_attributes[0]?.attribute_ru}{" "}
                         {lang === "ru"
                           ? item.sub_attributes[4]?.attribute_ru
@@ -303,16 +304,24 @@ const Tovar_nov = ({ mobile }) => {
                           ? "soum"
                           : "sum"}
                       </span>
-                      <Button
-                        className={"text-sm md:text-base"}
-                        onClick={() => ProductOrder(item.id)}
-                      >
-                        {lang === "ru"
-                          ? "Заказать"
-                          : lang === "en"
-                          ? "Order"
-                          : "Buyurtma berish"}
-                      </Button>
+                      <div className=" grid grid-cols-4 gap-3">
+                        <Button
+                          className={"text-sm md:text-base col-span-3"}
+                          onClick={() => ProductOrder(item.id)}
+                        >
+                          {lang === "ru"
+                            ? "Заказать"
+                            : lang === "en"
+                            ? "Order"
+                            : "Buyurtma berish"}
+                        </Button>
+                        <Button
+                          className={"text-sm md:text-base bg-[#109EF4] "}
+                          onClick={() => console.log("Heart Cliked")}
+                        >
+                          <Image src={Heart} alt="Heart" className="mx-auto" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>

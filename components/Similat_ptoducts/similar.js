@@ -247,7 +247,7 @@ const SimilarProducts = ({ mobile }) => {
                     <Image
                       onDragStart={(e) => e.preventDefault()}
                       className="mt-2 mb-1 md:mb-4"
-                      src={`${img}${item.image}`}
+                      src={`${img}${item.image[0]}`}
                       alt="baseen_product_image"
                       width={280}
                       height={220}

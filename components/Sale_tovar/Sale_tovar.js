@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import Image from "next/image";
+import Heart from "../../public/Assets/Images/ModalImg/heart.svg";
 
 const env = process.env.NEXT_PUBLIC_TOKEN;
 const img = process.env.NEXT_PUBLIC_IMG;
@@ -187,7 +188,8 @@ const Sale_nov = ({ mobile }) => {
     const fintProduct = tovar.find((e) => e.id === id);
     setFind(fintProduct);
   };
-
+  console.log(tovar);
+  console.log(loader);
   return (
     <section
       id="skidka"
@@ -241,13 +243,13 @@ const Sale_nov = ({ mobile }) => {
                     <Image
                       onDragStart={(e) => e.preventDefault()}
                       className="mt-2 mb-1 md:mb-4"
-                      src={`${img}${item.image}`}
+                      src={`${img}${item.image[0]}`}
                       alt="baseen_product_image"
                       width={280}
                       height={220}
                     />
                     <div className="p-2 md:p-4 border-t-lineColor border-t-1">
-                      <h3 className="text-sm md:text-lg font-bold leading-5 mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
+                      <h3 className="text-sm md:text-lg font-bold leading-5 mb-2 ">
                         {lang === "ru"
                           ? item.name_ru
                           : lang === "en"
@@ -282,16 +284,24 @@ const Sale_nov = ({ mobile }) => {
                           ? "soum"
                           : "sum"}
                       </span>
-                      <Button
-                        className={"text-sm md:text-base"}
-                        onClick={() => ProductOrder(item.id)}
-                      >
-                        {lang === "ru"
-                          ? "Заказать"
-                          : lang === "en"
-                          ? "Order"
-                          : "Buyurtma berish"}
-                      </Button>
+                      <div className=" grid grid-cols-4 gap-3">
+                        <Button
+                          className={"text-sm md:text-base col-span-3"}
+                          onClick={() => ProductOrder(item.id)}
+                        >
+                          {lang === "ru"
+                            ? "Заказать"
+                            : lang === "en"
+                            ? "Order"
+                            : "Buyurtma berish"}
+                        </Button>
+                        <Button
+                          className={"text-sm md:text-base bg-[#109EF4] "}
+                          onClick={() => console.log("Heart Cliked")}
+                        >
+                          <Image src={Heart} alt="Heart" className="mx-auto" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
