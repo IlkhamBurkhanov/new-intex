@@ -29,7 +29,7 @@ function Main() {
     <main>
       <Hero />
       {/* <Order /> */}
-      <Basket />
+      {/* <Basket /> */}
 
       <Populyar_nov mobile={mobile} />
       <TashkentPools />

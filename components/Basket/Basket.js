@@ -49,7 +49,7 @@ const Basket = () => {
         </div>
       ) : (
         <div>
-          <div className="mx-20">
+          <div className="mx-20 mt-[168px]">
             <h2 className=" font-bold text-2xl text-center mb-14">Корзина</h2>
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-2">
@@ -69,16 +69,16 @@ const Basket = () => {
                               ? setNumberProduct(numberProduct)
                               : setNumberProduct(numberProduct - 1)
                           }
-                          className="px-2 ml-1.5 py-px border rounded-l-[5px]"
+                          className="px-3 ml-1.5 w-10 h-10  text-2xl border rounded-l-[5px]"
                         >
                           -
                         </button>
-                        <h3 className="px-2 border text-center text-xl  text-black">
+                        <h3 className="px-4 border w-12 pt-1 h-10 text-center text-xl  text-black">
                           {numberProduct}
                         </h3>
                         <button
                           onClick={() => setNumberProduct(numberProduct + 1)}
-                          className="px-2  border rounded-r-[5px]"
+                          className="px-3 text-2xl w-10 h-10 border rounded-r-[5px]"
                         >
                           +
                         </button>
