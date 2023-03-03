@@ -212,7 +212,7 @@ function Card({
           />
         </div>
         <div className="p-2 md:p-4 border-t-lineColor border-t-1">
-          <h3 className="text-black-text_color text-sm md:text-lg font-bold leading-5 mb-2 whitespace-nowrap overflow-hidden text-ellipsis">
+          <h3 className="text-black-text_color text-sm md:text-lg font-bold leading-5 mb-2 ">
             {lang === "ru" ? name_ru : lang === "en" ? name_en : name_uz}
           </h3>
           <p

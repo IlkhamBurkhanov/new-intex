@@ -5,10 +5,16 @@ import Trash from "../../public/Assets/Images/HeaderAndHeroImg/trash.svg";
 import { useState } from "react";
 import Link from "next/link";
 import SimilarProducts from "../Similat_ptoducts/similar";
+import { useDispatch, useSelector } from "react-redux";
 
 const Basket = () => {
   const [numberProduct, setNumberProduct] = useState(8);
   const data = false;
+  const search = useSelector((state) => state.data.search);
+  const lang = useSelector((state) => state.data.lang);
+  const languages = useSelector((state) => state.data.localization);
+  const categoryId = useSelector((state) => state.data.categoryId);
+  const dispatch = useDispatch();
   const fakeDatas = [
     {
       img: fakeData,
@@ -29,7 +35,7 @@ const Basket = () => {
   return (
     <>
       {data ? (
-        <div className=" text-center mx-auto w-[628px]">
+        <div className=" text-center mx-auto mt-56 w-[628px]">
           <div className="flex flex-col">
             <Image
               className="mx-auto"
@@ -49,7 +55,28 @@ const Basket = () => {
         </div>
       ) : (
         <div>
-          <div className="mx-20 mt-[168px]">
+          <div className="mx-20 mt-[148px]">
+            <p className="flex items-center text-base text-black-black_thin">
+              <Link
+                href={`/`}
+                className="text-blue-accent"
+                onClick={() => dispatch(setCategoryId(0))}
+              >
+                {languages[lang].naduvniy.route}
+              </Link>
+              <Image
+                className="mx-1"
+                src={"/Assets/Images/NaduvniyImg/down.svg"}
+                width={24}
+                height={24}
+                alt="Arrow_down"
+              />
+              {lang === "ru"
+                ? "Корзина"
+                : lang === "uz"
+                ? "Savatcha"
+                : "Basket"}
+            </p>
             <h2 className=" font-bold text-2xl text-center mb-14">Корзина</h2>
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-2">

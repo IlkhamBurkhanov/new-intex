@@ -208,7 +208,7 @@ function Header() {
                 onChange={handleChange}
               />
               <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
-                <Link href="/basket">
+                <Link href="/_basket">
                   <Image
                     priority={true}
                     className="w-6 h-6"
