@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const env = process.env.NEXT_PUBLIC_TOKEN;
 const img = process.env.NEXT_PUBLIC_IMG;
@@ -182,7 +183,7 @@ function Card({
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="card rounded-xl max-w-cardWidth shadow-card_shadow relative border border-lineColor mt-5"
+        className="card rounded-xl max-w-cardWidth shadow-card_shadow relative  mt-5"
       >
         <span
           className={`${status_ru === "Новинки" ? "bg-green-new" : ""} ${
@@ -212,9 +213,11 @@ function Card({
           />
         </div>
         <div className="p-2 md:p-4 border-t-lineColor border-t-1">
-          <h3 className="text-black-text_color text-sm md:text-lg font-bold leading-5 mb-2 ">
-            {lang === "ru" ? name_ru : lang === "en" ? name_en : name_uz}
-          </h3>
+          <Link href="infoProduct">
+            <h3 className="text-black-text_color text-sm md:text-lg font-bold leading-5 mb-2 ">
+              {lang === "ru" ? name_ru : lang === "en" ? name_en : name_uz}
+            </h3>
+          </Link>
           <p
             className={`${
               sub_attributes.length > 0 ? "" : "h-6"

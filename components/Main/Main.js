@@ -10,6 +10,7 @@ import Populyar_nov from "../Populyar_tovar/Populyar_tovar";
 import Basket from "../Basket/Basket";
 import Order from "../Order/order";
 import SimilarProducts from "../Similat_ptoducts/similar";
+import Products from "../Products/Products";
 
 function Main() {
   const [mobile, setMobile] = useState(false);
