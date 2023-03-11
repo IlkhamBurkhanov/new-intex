@@ -178,144 +178,147 @@ export default function Products({ data }) {
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-5  text-[#464A4D]">
-                <div className=" col-span-1 mt-8 shadow-card_shadow">
-                  <div className="flex justify-between border-b-1 m-4 pb-4 ">
-                    <h1 className=" font-bold text-lg">Фильтр</h1>
-                    <p className="text-[#109EF4] font-bold text-sm">
-                      Сбросить(11)
-                    </p>
-                  </div>
-                  <div className="mx-4 text-[#464A4D] border-b-1 pb-4">
-                    <h2 className="font-bold text-lg">Категории</h2>
-                    <label className="flex gap-2 mt-4">
-                      <input
-                        className="w-4 h-4 mt-1"
-                        type="checkbox"
-                        onChange={(e) =>
-                          e.target.checked ? setChecked(1) : setChecked(0)
-                        }
-                      />
-                      <p className=" font-500">Надувные бассейны</p>
-                    </label>
-                    <label className="flex gap-2 mt-4">
-                      <input
-                        className="w-4 h-4 mt-1"
-                        type="checkbox"
-                        onChange={(e) =>
-                          e.target.checked ? setChecked2(1) : setChecked2(0)
-                        }
-                      />
-                      <p className=" font-500">Каркасные бассейны</p>
-                    </label>
-                    <label className="flex gap-2 mt-4">
-                      <input className="w-4 h-4 mt-1" type="checkbox" />
-                      <p className=" font-500">Все чистки бассейна</p>
-                    </label>
-                    <label className="flex gap-2 mt-4">
-                      <input className="w-4 h-4 mt-1" type="checkbox" />
-                      <p className=" font-500">Аксессуары для бассейна</p>
-                    </label>
-                  </div>
-                  <div className="mx-4 mt-4 border-b-1 pb-4 ">
-                    <h2 className=" font-bold text-lg">Цена</h2>
-                    <label className="flex justify-between mt-3">
-                      <p className="text-sm text-[#828282] mt-1">
-                        Выберите валюту
+                <div className=" col-span-1 mt-8 ">
+                  <div className="shadow-card_shadow">
+                    {" "}
+                    <div className="flex justify-between border-b-1 m-4 pb-4 ">
+                      <h1 className=" font-bold text-lg">Фильтр</h1>
+                      <p className="text-[#109EF4] font-bold text-sm">
+                        Сбросить(11)
                       </p>
-                      <select className=" text-sm py-2 bg-[#F2F2F2] rounded-md">
-                        <option>СУМ</option>
-                        <option>ДОЛЛ</option>
-                        <option>РУБ</option>
-                      </select>
-                    </label>
-                    <label className="flex mt-5">
-                      <MultiRangeSlider
-                        minValue={minValue}
-                        maxValue={maxValue}
-                        min={500000}
-                        max={10000000}
-                        set_maxValue={set_maxValue}
-                        set_minValue={set_minValue}
-                      />
-                    </label>
-                    <label className="flex gap-2.5 mt-6">
-                      <input
-                        type="number"
-                        value={minValue}
-                        className="p-2.5 w-full rounded-md bg-[#F2F2F2]"
-                        onChange={(e) => set_minValue(e.target.value)}
-                      />
-                      <input
-                        type="number"
-                        value={maxValue}
-                        className="p-2.5 w-full rounded-md bg-[#F2F2F2]"
-                        onChange={(e) => set_maxValue(e.target.value)}
-                      />
-                    </label>
-                  </div>
-                  <div className="mx-4 mt-4">
-                    <h2 className="font-bold text-lg">По типам</h2>
+                    </div>
+                    <div className="mx-4 text-[#464A4D] border-b-1 pb-4">
+                      <h2 className="font-bold text-lg">Категории</h2>
+                      <label className="flex gap-2 mt-4">
+                        <input
+                          className="w-4 h-4 mt-1"
+                          type="checkbox"
+                          onChange={(e) =>
+                            e.target.checked ? setChecked(1) : setChecked(0)
+                          }
+                        />
+                        <p className=" font-500">Надувные бассейны</p>
+                      </label>
+                      <label className="flex gap-2 mt-4">
+                        <input
+                          className="w-4 h-4 mt-1"
+                          type="checkbox"
+                          onChange={(e) =>
+                            e.target.checked ? setChecked2(1) : setChecked2(0)
+                          }
+                        />
+                        <p className=" font-500">Каркасные бассейны</p>
+                      </label>
+                      <label className="flex gap-2 mt-4">
+                        <input className="w-4 h-4 mt-1" type="checkbox" />
+                        <p className=" font-500">Все чистки бассейна</p>
+                      </label>
+                      <label className="flex gap-2 mt-4">
+                        <input className="w-4 h-4 mt-1" type="checkbox" />
+                        <p className=" font-500">Аксессуары для бассейна</p>
+                      </label>
+                    </div>
+                    <div className="mx-4 mt-4 border-b-1 pb-4 ">
+                      <h2 className=" font-bold text-lg">Цена</h2>
+                      <label className="flex justify-between mt-3">
+                        <p className="text-sm text-[#828282] mt-1">
+                          Выберите валюту
+                        </p>
+                        <select className=" text-sm py-2 bg-[#F2F2F2] rounded-md">
+                          <option>СУМ</option>
+                          <option>ДОЛЛ</option>
+                          <option>РУБ</option>
+                        </select>
+                      </label>
+                      <label className="flex mt-5">
+                        <MultiRangeSlider
+                          minValue={minValue}
+                          maxValue={maxValue}
+                          min={500000}
+                          max={10000000}
+                          set_maxValue={set_maxValue}
+                          set_minValue={set_minValue}
+                        />
+                      </label>
+                      <label className="flex gap-2.5 mt-6">
+                        <input
+                          type="number"
+                          value={minValue}
+                          className="p-2.5 w-full rounded-md bg-[#F2F2F2]"
+                          onChange={(e) => set_minValue(e.target.value)}
+                        />
+                        <input
+                          type="number"
+                          value={maxValue}
+                          className="p-2.5 w-full rounded-md bg-[#F2F2F2]"
+                          onChange={(e) => set_maxValue(e.target.value)}
+                        />
+                      </label>
+                    </div>
+                    <div className="mx-4 mt-4">
+                      <h2 className="font-bold text-lg">По типам</h2>
 
-                    <div className=" max-w-738 mx-auto py-7 cursor-pointer ">
-                      <div
-                        onClick={handleClick}
-                        className={`flex justify-between mb-4 sm:mb-0`}
-                      >
-                        <div>
-                          <input type="checkbox" className="w-4 h-4 mt-1" />
-                          <span className="ml-2">Все типы</span>
-                        </div>
-                        <div>
-                          <Image className="" src={Down} alt=">" />
-                          <div className={`relative hidden sm:flex`}>
-                            <span
-                              className={`inline-block absolute w-5 h-0.5 `}
-                            ></span>
-                            <span
-                              className={`inline-block absolute  ${
-                                rotateEl ? "" : "rotate-90"
-                              }  w-5 h-0.5 duration-300 `}
-                            ></span>
+                      <div className=" max-w-738 mx-auto py-7 cursor-pointer ">
+                        <div
+                          onClick={handleClick}
+                          className={`flex justify-between mb-4 sm:mb-0`}
+                        >
+                          <div>
+                            <input type="checkbox" className="w-4 h-4 mt-1" />
+                            <span className="ml-2">Все типы</span>
+                          </div>
+                          <div>
+                            <Image className="" src={Down} alt=">" />
+                            <div className={`relative hidden sm:flex`}>
+                              <span
+                                className={`inline-block absolute w-5 h-0.5 `}
+                              ></span>
+                              <span
+                                className={`inline-block absolute  ${
+                                  rotateEl ? "" : "rotate-90"
+                                }  w-5 h-0.5 duration-300 `}
+                              ></span>
+                            </div>
                           </div>
                         </div>
+                        <div
+                          className={`duration-300 ${
+                            rotateEl
+                              ? "  pt-4 sm:overflow-auto "
+                              : " sm:h-0 sm:overflow-hidden"
+                          }`}
+                        >
+                          <ul className="px-5">
+                            <li>
+                              <input type="checkbox" className="w-4 h-4 mt-1" />
+                              <span className="ml-2">Хит продаж</span>
+                            </li>
+                            <li className="mt-4">
+                              <input type="checkbox" className="w-4 h-4 mt-1" />
+                              <span className="ml-2">Новинки</span>
+                            </li>
+                            <li className="mt-4">
+                              <input type="checkbox" className="w-4 h-4 mt-1" />
+                              <span className="ml-2">Скидка</span>
+                            </li>
+                            <li className="mt-4">
+                              <input type="checkbox" className="w-4 h-4 mt-1" />
+                              <span className="ml-2">Pекомендуем</span>
+                            </li>
+                            <li className="mt-4">
+                              <input type="checkbox" className="w-4 h-4 mt-1" />
+                              <span className="ml-2">Обичные</span>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                      <div
-                        className={`duration-300 ${
-                          rotateEl
-                            ? "  pt-4 sm:overflow-auto "
-                            : " sm:h-0 sm:overflow-hidden"
-                        }`}
+                      <button
+                        onClick={handleClicked}
+                        className="w-full text-center py-3 mb-8 mt-20  bg-[#2B3D90] rounded-xl text-white text-lg"
                       >
-                        <ul className="px-5">
-                          <li>
-                            <input type="checkbox" className="w-4 h-4 mt-1" />
-                            <span className="ml-2">Хит продаж</span>
-                          </li>
-                          <li className="mt-4">
-                            <input type="checkbox" className="w-4 h-4 mt-1" />
-                            <span className="ml-2">Новинки</span>
-                          </li>
-                          <li className="mt-4">
-                            <input type="checkbox" className="w-4 h-4 mt-1" />
-                            <span className="ml-2">Скидка</span>
-                          </li>
-                          <li className="mt-4">
-                            <input type="checkbox" className="w-4 h-4 mt-1" />
-                            <span className="ml-2">Pекомендуем</span>
-                          </li>
-                          <li className="mt-4">
-                            <input type="checkbox" className="w-4 h-4 mt-1" />
-                            <span className="ml-2">Обичные</span>
-                          </li>
-                        </ul>
-                      </div>
+                        Поиск
+                      </button>
                     </div>
-                    <button
-                      onClick={handleClicked}
-                      className="w-full text-center py-3 mb-8 mt-20  bg-[#2B3D90] rounded-xl text-white text-lg"
-                    >
-                      Поиск
-                    </button>
                   </div>
                 </div>
                 <div className="col-span-3 w-full grid grid-cols-3 grid-rows-2 gap-5 mt-3">

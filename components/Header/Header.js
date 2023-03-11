@@ -220,14 +220,16 @@ function Header() {
                 </Link>
               </button>
               <button className="bg-white z-50 hidden md:flex ml-5 w-11 h-11   items-center justify-center cursor-pointer rounded-xl">
-                <Image
-                  priority={true}
-                  className="w-6 h-6"
-                  src={"/Assets/Images/HeaderAndHeroImg/user.svg"}
-                  width={24}
-                  height={24}
-                  alt="Blog Img"
-                />
+                <Link href="/login">
+                  <Image
+                    priority={true}
+                    className="w-6 h-6"
+                    src={"/Assets/Images/HeaderAndHeroImg/user.svg"}
+                    width={24}
+                    height={24}
+                    alt="Blog Img"
+                  />
+                </Link>
               </button>
 
               <a className="flex sm:hidden z-50" href="tel:+998901288182">
