@@ -3,13 +3,54 @@ import Image from "next/image";
 import Visible from "../../public/Assets/Images/LoginUser/Visible.png";
 import IsVisible from "../../public/Assets/Images/LoginUser/IsVisible.png";
 import { useState } from "react";
+import Link from "next/link";
+
+import axios from "axios";
+import { toast } from "react-hot-toast";
+const env = process.env.NEXT_PUBLIC_TOKEN;
 
 function LoginPage() {
   const [icon, setIcon] = useState(false);
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [icon1, setIcon1] = useState(false);
   const [password1, setPassword1] = useState("");
   const [register, setRegister] = useState(false);
+  const [linked, setLinked] = useState("/login");
+  const postRequest = async (e) => {
+    e.preventDefault();
+
+    // setLoading(true);
+    axios
+      .post(`${env}auth/user/login`, {
+        phone: null,
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        if (res?.data?.token) {
+          console.log(res);
+          setLinked("/userinfo");
+        } else if (res?.status === 201) {
+          console.log("Successfull sent!");
+        }
+      })
+      .catch((err) => {
+        if (err?.response?.status === 401) {
+          console.log("Эл.адрес или пароль неверны");
+        } else if (err?.response?.status === 400) {
+          console.log("Ошибка электронной почты");
+        } else if (err?.message === "Network Error") {
+          console.log(err?.message);
+        }
+      })
+      .finally(() => {
+        // setLoading(false);
+        setEmail("");
+        setPassword("");
+      });
+  };
+  console.log(linked);
   return (
     <div>
       <div className="flex flex-col justify-center items-center ">
@@ -26,6 +67,7 @@ function LoginPage() {
             >
               Войти
             </button>
+
             <button
               onClick={() => setRegister(true)}
               className={`${
@@ -129,6 +171,7 @@ function LoginPage() {
                   className="py-3  px-4 mt-3 border rounded-lg w-full outline-none"
                   placeholder="Введите ваше имя"
                   type="text"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </label>
               <label className="">
@@ -174,7 +217,10 @@ function LoginPage() {
             </div>
           )}
 
-          <button className=" text-lg py-2 mt-5 bg-[#2B3D90] rounded-lg text-white w-full">
+          <button
+            onClick={postRequest}
+            className=" text-lg py-2 mt-5 bg-[#2B3D90] rounded-lg text-white w-full"
+          >
             Войти
           </button>
         </div>

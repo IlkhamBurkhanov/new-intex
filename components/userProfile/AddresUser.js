@@ -2,18 +2,10 @@ import React from "react";
 import AddIcon from "../../public/Assets/Images/LoginUser/addresIcon.svg";
 import DelIcon from "../../public/Assets/Images/LoginUser/delete.svg";
 import EditIcon from "../../public/Assets/Images/LoginUser/edit.svg";
+import { YMaps, Map } from "react-yandex-maps";
 import Image from "next/image";
-import GoogleMapReact from "google-map-react";
-function AddresUser() {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
-  const MapMarker = ({ text }) => <div>{text}</div>;
 
+function AddresUser() {
   return (
     <div>
       <div>
@@ -55,6 +47,13 @@ function AddresUser() {
           </div>
         </div>
       </div>
+
+      <YMaps>
+        <div>
+          My awesome application with maps!
+          <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
+        </div>
+      </YMaps>
     </div>
   );
 }

@@ -234,8 +234,8 @@ export default function Products({ data }) {
                         <MultiRangeSlider
                           minValue={minValue}
                           maxValue={maxValue}
-                          min={500000}
-                          max={10000000}
+                          min={50}
+                          max={1000}
                           set_maxValue={set_maxValue}
                           set_minValue={set_minValue}
                         />

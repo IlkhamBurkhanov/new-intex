@@ -13,11 +13,11 @@ function Order() {
           <h2 className="font-normal text-[#109EF4] text-xs ml-2.5">Главная</h2>
         </Link>
         <span className="ml-2.5 text-[#109EF4] ">/</span>
-        <Link href="#">
+        <Link href="_basket">
           <h2 className="font-normal text-[#109EF4] text-xs ml-2.5">Корзина</h2>
         </Link>
         <span className="ml-2.5 text-[#109EF4] ">/</span>
-        <Link href="#">
+        <Link href="order">
           <h2 className="font-normal text-[#109EF4] text-xs ml-2.5">
             Оформить заказ
           </h2>

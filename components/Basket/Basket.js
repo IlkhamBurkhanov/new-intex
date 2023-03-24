@@ -6,15 +6,37 @@ import { useState } from "react";
 import Link from "next/link";
 import SimilarProducts from "../Similat_ptoducts/similar";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzbW9taW1qb25vdjIwQGdtYWlsLmNvbSIsInBob25lIjoiKzk5OTk0NjI0MDcxMiIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImltYWdlIjpudWxsLCJ1c2VybmFtZSI6IlNhcnZhck1vJ21pbmpvbm92IiwiaWF0IjoxNjc4Njk4MzE1LCJleHAiOjE2Nzg3MDU1MTV9.2-9Ne6KpYdM7RKiZ-uAkBI69nousJYPI2ju-8ViN4WI";
 
 const Basket = () => {
   const [numberProduct, setNumberProduct] = useState(8);
-  const data = false;
   const search = useSelector((state) => state.data.search);
   const lang = useSelector((state) => state.data.lang);
   const languages = useSelector((state) => state.data.localization);
   const categoryId = useSelector((state) => state.data.categoryId);
+  const [data, setData] = useState([]);
   const dispatch = useDispatch();
+
+  ttps: React.useEffect(() => {
+    axios
+      .get(
+        "https://intex-shop-production.up.railway.app/api/users/profile/orders",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        setData(res?.data.result);
+
+        // setTotalpage(res.data?.total_count.count);
+      });
+  }, [token]);
+
   const fakeDatas = [
     {
       img: fakeData,
